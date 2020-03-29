@@ -14,8 +14,7 @@ app.post('/', async (req, res) => {
   sgMail.setApiKey(
     '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'
   );
-  log.info({ para, assunto, texto });
-
+  log.debug({ para, assunto, texto });
   const msg = {
     to: para,
     from: 'cantina.honesta@ravex.com.br',

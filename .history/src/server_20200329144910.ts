@@ -9,18 +9,15 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/', async (req, res) => {
-  const { para, assunto, texto } = req.body;
-
   sgMail.setApiKey(
     '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'
   );
-  log.info({ para, assunto, texto });
-
   const msg = {
-    to: para,
-    from: 'cantina.honesta@ravex.com.br',
-    subject: assunto,
-    text: texto
+    to: 'willianluiszuqui@gmail.com',
+    from: 'willianluiszuqui@gmail.com',
+    subject: 'Sending with Twilio SendGrid is Fun',
+    text: 'and easy to do anywhere, even with Node.js',
+    html: '<strong>and easy to do anywhere, even with Node.js</strong>'
   };
   const response = await sgMail.send(msg);
   res.json({ response });
